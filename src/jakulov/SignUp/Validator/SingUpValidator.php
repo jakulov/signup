@@ -72,7 +72,9 @@ class SingUpValidator extends Validator
                             Validator.showError($(field).attr('name'), Validator.messages['EMAIL_IS_TAKEN']);
                         }
                         else {
-                            Validator.hideError($(field).attr('name'));
+                            if(!Validator.getField($(field).attr('name')).closest('.form-group').hasClass('has-error')) {
+                                Validator.hideError($(field).attr('name'));
+                            }
                         }
                     });
                 }"
