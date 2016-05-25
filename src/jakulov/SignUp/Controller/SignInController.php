@@ -43,6 +43,8 @@ class SignInController extends Controller
 
                     return $this->redirect('/');
                 }
+
+                $errors['password'] = Language::get(EMAIL_OR_PASSWORD_INCORRECT);
             }
             else {
                 $errors = $validator->getValidationErrors();

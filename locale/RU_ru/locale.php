@@ -45,4 +45,5 @@ return [
     MAX_UPLOAD_FILE_SIZE => 'Загружаемый файл не должен превышать ',
     CHOOSE_IMAGE_LINK => 'Выбрать изображение',
     UPLOAD_PROCESS_MESSAGE => 'Загрузка...',
+    EMAIL_OR_PASSWORD_INCORRECT => 'Неверный E-mail или пароль',
 ];

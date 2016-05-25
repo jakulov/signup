@@ -26,7 +26,7 @@ return [
     PASSWORD_LABEL => 'Password',
     PASSWORD2_LABEL => 'Repeat password',
     REMEMBER_ME_LABEL => 'Remember me',
-    BIND_IP_LABEL => 'Bins session to IP-address',
+    BIND_IP_LABEL => 'Bind session to IP-address',
     NEED_REGISTER_LINK => 'sign up',
     NEED_REGISTER_TEXT => 'To access profile you need to ',
     CAN_SIGN_IN_LINK => 'sign in',
@@ -45,4 +45,5 @@ return [
     MAX_UPLOAD_FILE_SIZE => 'Uploaded file size must not have been more than ',
     CHOOSE_IMAGE_LINK => 'Choose an image',
     UPLOAD_PROCESS_MESSAGE => 'Loading...',
+    EMAIL_OR_PASSWORD_INCORRECT => 'Wrong E-mail or password',
 ];

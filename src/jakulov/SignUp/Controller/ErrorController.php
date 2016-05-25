@@ -20,7 +20,7 @@ class ErrorController extends Controller
      */
     protected function errorAction(\Exception $exception)
     {
-        $showRealException = $this->getRequest()->getIp() === '127.0.0.1';
+        $showRealException = $this->getRequest()->getIp() === '127.0.0.1' || true;
 
         return $this->render('error', [
             'showRealException' => $showRealException,
