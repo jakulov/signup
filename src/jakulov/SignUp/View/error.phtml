@@ -1,0 +1,20 @@
+<?php require __DIR__ .'/common/header.phtml'?>
+<?php
+/** @var $showRealException */
+/** @var \Exception $exception */
+?>
+    <div class="container">
+
+        <?php require 'common/lang_switch.phtml'?>
+
+        <div class="bottom-form-block">
+            <p class="alert alert-danger"><?=$exception->getMessage()?></p>
+            <?php if($showRealException):?>
+                <p class="well"><?=($exception->getPrevious() ? $exception->getPrevious()->getMessage() : get_class($exception))?></p>
+                <p class="well well-sm" style="font-size: 11px;"><?=nl2br($exception->getTraceAsString())?></p>
+            <?php endif?>
+        </div>
+
+    </div> <!-- /container -->
+
+<?php require __DIR__ .'/common/footer.phtml'?>

@@ -1,0 +1,18 @@
+<?php
+/** @var \jakulov\SignUp\Http\Request $request */
+?>
+<div class="top-form-block">
+    <?php foreach($flash_errors as $e):?>
+        <div class="alert alert-danger "><?=$e?></div>
+    <?php endforeach;?>
+    <?php foreach($flash_success as $e):?>
+        <div class="alert alert-success "><?=$e?></div>
+    <?php endforeach;?>
+    <div class="btn-group">
+        <a href="/" class="btn btn-info" style="font-weight: bold"><?=\jakulov\SignUp\Service\Language::get(APPLICATION_NAME)?></a>
+    </div>
+    <div class="btn-group pull-right">
+        <a class="btn btn-default <?=(\jakulov\SignUp\Service\Language::getLang() == 'RU_ru' ? 'active' : '')?>" href="<?=($request->getPath() .'?lang=RU_ru')?>">RU</a>
+        <a class="btn btn-default <?=(\jakulov\SignUp\Service\Language::getLang() == 'EN_en' ? 'active' : '')?>" href="<?=($request->getPath() .'?lang=EN_en')?>">EN</a>
+    </div>
+</div>
