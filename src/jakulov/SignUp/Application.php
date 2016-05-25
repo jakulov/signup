@@ -102,7 +102,6 @@ class Application
      */
     public function handleError($errNo, $errMessage, $errFile, $errLine)
     {
-        var_dump($errFile, $errLine); die;
         throw new \ErrorException($errMessage, 0, $errNo, $errFile, $errLine);
     }
 

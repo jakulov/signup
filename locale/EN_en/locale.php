@@ -1,7 +1,48 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: yakov
- * Date: 25.05.16
- * Time: 17:08
- */
+
+return [
+    FIELD_IS_REQUIRED => 'This field is required',
+    NOT_VALID_EMAIL => 'Invalid E-mail',
+    VALUES_DOES_NOT_MATCH => 'Values does not match',
+    FILE_TO_BIG => 'File size to big',
+    UNSUPPORTED_FILE_FORMAT => 'Unsupported file format',
+    ALLOW_FILE_SIZE => 'Maximum file size',
+    ALLOW_FILE_FORMAT => 'Supported file formats',
+    EMAIL_IS_TAKEN => 'User with this email already registered',
+    SIGN_UP_TITLE => 'Sign Up',
+    SIGN_IN_TITLE => 'Sign In',
+    FORGOT_TITLE => 'Restore password',
+    FORGOT_LINK => 'Forgot password?',
+    RESET_TITLE => 'Reset password',
+    PROFILE_TITLE => 'My profile',
+    APPLICATION_TITLE => 'Sample application for user sign up',
+    APPLICATION_NAME => 'My Profile &copy;',
+
+    EMAIL_LABEL => 'E-mail',
+    NAME_LABEL => 'Your Name',
+    PHONE_LABEL => 'Phone',
+    PHOTO_LABEL => 'Photo',
+    ABOUT_LABEL => 'Tell about yourself',
+    PASSWORD_LABEL => 'Password',
+    PASSWORD2_LABEL => 'Repeat password',
+    REMEMBER_ME_LABEL => 'Remember me',
+    BIND_IP_LABEL => 'Bins session to IP-address',
+    NEED_REGISTER_LINK => 'sign up',
+    NEED_REGISTER_TEXT => 'To access profile you need to ',
+    CAN_SIGN_IN_LINK => 'sign in',
+    CAN_SIGN_IN_TEXT => 'If you are already signed up, you can ',
+    SIGN_OUT_LINK => 'Sign Out',
+
+    USER_NOT_FOUND => 'User not found',
+    USER_RESET_MAIL_SUBJECT => 'Restore password',
+    USER_RESET_MAIL_BODY => 'To restore password go by link',
+    USER_RESET_PASSWORD_STARTED => 'To restore password you have been sent a message to specified email',
+    INVALID_RESET_TOKEN => 'Wrong restore link',
+    USER_PASSWORD_RESET_SUCCESS => 'Password successfully changed',
+    USER_SUCCESS_LOGIN => 'Success sing in',
+    USER_SUCCESS_SIGN_UP => 'You have been signed up, use your E-mail and password to sign in',
+
+    MAX_UPLOAD_FILE_SIZE => 'Uploaded file size must not have been more than ',
+    CHOOSE_IMAGE_LINK => 'Choose an image',
+    UPLOAD_PROCESS_MESSAGE => 'Loading...',
+];

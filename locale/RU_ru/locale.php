@@ -31,6 +31,7 @@ return [
     NEED_REGISTER_TEXT => 'Для доступа к профилю необходимо пройти',
     CAN_SIGN_IN_LINK => 'войти',
     CAN_SIGN_IN_TEXT => 'Если вы уже зарегистрированы, можете ',
+    SIGN_OUT_LINK => 'Выход',
 
     USER_NOT_FOUND => 'Пользователь не найден',
     USER_RESET_MAIL_SUBJECT => 'Восстановление пароля',

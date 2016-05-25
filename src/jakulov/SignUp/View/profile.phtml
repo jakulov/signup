@@ -1,0 +1,46 @@
+<?php require __DIR__ .'/common/header.phtml'?>
+<?php
+/** @var \jakulov\SignUp\Model\User $user */
+?>
+    <div class="container">
+
+        <?php require 'common/lang_switch.phtml'?>
+
+        <div class="top-form-block">
+            <a class="pull-right" href="/sign/out"><?=\jakulov\SignUp\Service\Language::get(SIGN_OUT_LINK)?></a>
+            <h1 class=""><?=\jakulov\SignUp\Service\Language::get(PROFILE_TITLE)?></h1>
+        </div>
+        <div class="top-form-block">
+            <div class="row">
+                <div class="col-sm-4">
+                    <?php if($user->photo):?>
+                        <img src="<?=UPLOAD_PATH .'/'. \jakulov\SignUp\Service\View::out($user->photo, true)?>" style="width: 200px;">
+                    <?php endif?>
+                </div>
+                <div class="col-sm-8">
+                    <div style="padding: 0 10px;">
+                        <h3 style="margin-top: 0;"><?php \jakulov\SignUp\Service\View::out($user->name)?></h3>
+                        <p>
+                            <a href="mailto:<?php \jakulov\SignUp\Service\View::out($user->email)?>">
+                                <i class="glyphicon glyphicon-envelope"></i>&nbsp;&nbsp;
+                                <?php \jakulov\SignUp\Service\View::out($user->email)?></a>
+                        </p>
+                        <p>
+                            <a href="tel:<?php \jakulov\SignUp\Service\View::out($user->phone)?>">
+                                <i class="glyphicon glyphicon-phone"></i>&nbsp;&nbsp;
+                                <?php \jakulov\SignUp\Service\View::out($user->phone)?></a>
+                        </p>
+                        <p><i><?=nl2br(\jakulov\SignUp\Service\View::out($user->about, true))?></i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-form-block">
+            <small>
+                Powered by <a target="_blank" href="http://jakulov.ru">@jakulov</a>
+            </small>
+        </div>
+
+    </div> <!-- /container -->
+
+<?php require __DIR__ .'/common/footer.phtml'?>

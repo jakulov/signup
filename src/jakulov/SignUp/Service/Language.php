@@ -11,6 +11,7 @@ namespace jakulov\SignUp\Service;
 use jakulov\SignUp\Application;
 use jakulov\SignUp\Exception\SignUpException;
 use jakulov\SignUp\Http\Request;
+use jakulov\SignUp\Http\Response;
 
 /**
  * Class Language
@@ -35,6 +36,8 @@ class Language
         else {
             self::$lang = Application::DEFAULT_LANGUAGE;
         }
+
+        Response::setCookie('lang', self::$lang, time() + 3600 * 60 * 30, '/');
     }
 
     /**

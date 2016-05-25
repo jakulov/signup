@@ -109,7 +109,7 @@ class UserService
         if($remember) {
             $token = new AuthToken(true, $user);
             if($bindIp) {
-                $token->ip = $bindIp;
+                $token->ip = $this->request->getIp();
             }
             $token->save();
             if($token->id) {
@@ -126,6 +126,9 @@ class UserService
      */
     public function logout()
     {
+        if(!isset($_SESSION)) {
+            session_start();
+        }
         unset($_SESSION[User::SESSION_IP_KEY]);
         unset($_SESSION[User::SESSION_PARAM]);
         Response::unsetCookie(AuthToken::COOKIE_NAME);

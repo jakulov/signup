@@ -99,6 +99,9 @@ abstract class Model
         elseif($quotedValue instanceof \DateTime) {
             $quotedValue = ' = ' . $connection->quote($quotedValue->format('Y-m-d H:i:s'), \PDO::PARAM_STR);
         }
+        elseif(is_array($quotedValue) && isset($quotedValue['date']) && isset($quotedValue['timezone_type'])) {
+            $quotedValue = ' = ' . $connection->quote($quotedValue['date'], \PDO::PARAM_STR);
+        }
         else {
             $quotedValue = ' = ' . $connection->quote(serialize($quotedValue), \PDO::PARAM_STR);
         }
