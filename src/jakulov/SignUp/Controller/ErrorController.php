@@ -24,7 +24,8 @@ class ErrorController extends Controller
 
         return $this->render('error', [
             'showRealException' => $showRealException,
-            'exception' => $exception
+            'exception' => $exception,
+            'title' => 'Error happened',
         ]);
     }
 }

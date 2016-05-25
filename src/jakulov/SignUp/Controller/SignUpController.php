@@ -55,6 +55,7 @@ class SignUpController extends Controller
             'validator' => $validator,
             'data' => $data,
             'errors' => $errors,
+            'title' => Language::get(SIGN_UP_TITLE),
         ]);
     }
 

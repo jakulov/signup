@@ -7,6 +7,7 @@
  */
 
 namespace jakulov\SignUp\Controller;
+use jakulov\SignUp\Service\Language;
 
 /**
  * Class ProfileController
@@ -23,6 +24,7 @@ class ProfileController extends Controller
         if($authUser) {
             return $this->render('profile', [
                 'user' => $authUser,
+                'title' => Language::get(PROFILE_TITLE),
             ]);
         }
 

@@ -55,6 +55,7 @@ class SignInController extends Controller
             'validator' => $validator,
             'data' => $data,
             'errors' => $errors,
+            'title' => Language::get(SIGN_IN_TITLE),
         ]);
     }
 
@@ -99,6 +100,7 @@ class SignInController extends Controller
             'validator' => $validator,
             'data' => $data,
             'errors' => $errors,
+            'title' => Language::get(FORGOT_TITLE),
         ]);
     }
 
@@ -135,6 +137,7 @@ class SignInController extends Controller
                 'validator' => $validator,
                 'data' => $data,
                 'errors' => $errors,
+                'title' => Language::get(RESET_TITLE),
             ]);
         }
 
