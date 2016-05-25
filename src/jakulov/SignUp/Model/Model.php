@@ -35,7 +35,7 @@ abstract class Model
 
         $class = explode('\\', static::class);
 
-        return strtolower(end($class));
+        return lcfirst(end($class));
     }
 
     /**
