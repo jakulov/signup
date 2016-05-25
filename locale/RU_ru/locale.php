@@ -33,7 +33,7 @@ return [
     CAN_SIGN_IN_TEXT => 'Если вы уже зарегистрированы, можете ',
     SIGN_OUT_LINK => 'Выход',
 
-    USER_NOT_FOUND => 'Пользователь не найден',
+    USER_WAS_NOT_FOUND => 'Пользователь не найден',
     USER_RESET_MAIL_SUBJECT => 'Восстановление пароля',
     USER_RESET_MAIL_BODY => 'Для восстановления пароля перейдите по ссылке',
     USER_RESET_PASSWORD_STARTED => 'Для восстановления пароля вам отправлено письмо на указанную почту',

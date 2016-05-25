@@ -89,7 +89,7 @@ class SignInController extends Controller
                     return $this->redirect('/sign/in');
                 }
 
-                $errors['email'] = Language::get(USER_NOT_FOUND);
+                $errors['email'] = Language::get(USER_WAS_NOT_FOUND);
             }
             else {
                 $errors = $validator->getValidationErrors();

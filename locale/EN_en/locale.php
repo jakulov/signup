@@ -33,7 +33,7 @@ return [
     CAN_SIGN_IN_TEXT => 'If you are already signed up, you can ',
     SIGN_OUT_LINK => 'Sign Out',
 
-    USER_NOT_FOUND => 'User not found',
+    USER_WAS_NOT_FOUND => 'User not found',
     USER_RESET_MAIL_SUBJECT => 'Restore password',
     USER_RESET_MAIL_BODY => 'To restore password go by link',
     USER_RESET_PASSWORD_STARTED => 'To restore password you have been sent a message to specified email',
