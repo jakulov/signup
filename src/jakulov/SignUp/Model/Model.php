@@ -48,7 +48,7 @@ abstract class Model
         $set = [];
         $connection = self::getConnection();
         foreach($data as $key => $value) {
-            $set[] = $key . self::getFieldQuotedValue($value, $connection);
+            $set[] = $key . str_replace('IS NULL', '= NULL', self::getFieldQuotedValue($value, $connection));
         }
 
         $query = 'INSERT INTO '. self::getTableName() .' SET '. join(', ', $set);
@@ -232,7 +232,7 @@ abstract class Model
             $result = self::getConnection()->query($sql);
         }
         catch(\PDOException $e) {
-            throw new SignUpException('Error in sql query. Unable to fetch objects', $e->getCode(), $e);
+            throw new SignUpException('Error in sql query. Unable to fetch objects', 0, $e);
         }
         if($result) {
             $return = [];

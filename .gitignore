@@ -1,3 +1,6 @@
 /.idea/
 /var/
+!/var/.gitkeep
 /config/local.php
+/app/upload/
+!/app/upload/.gitkeep

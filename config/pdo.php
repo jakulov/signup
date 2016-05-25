@@ -8,6 +8,7 @@
 
 return ['pdo' => [
     'dns' => 'mysql:dbname=signup;host=localhost',
+    'database' => 'signup',
     'username' => 'root',
     'password' => '',
 ]];

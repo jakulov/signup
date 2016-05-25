@@ -12,3 +12,14 @@ CREATE TABLE user (
   password VARCHAR(80),
   resetToken VARCHAR(60)
 ) engine='InnoDB';
+
+CREATE TABLE authToken (
+  id INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  token VARCHAR(60) NOT NULL UNIQUE,
+  createdAt DATETIME,
+  userId INT(11) NOT NULL
+) engine='InnoDB';
+
+ALTER TABLE authToken ADD CONSTRAINT fk_user_id FOREIGN KEY (userId) REFERENCES user(id);
+CREATE INDEX user_email_idx ON user(email);
+CREATE INDEX authToken_token_idx ON authToken(token);

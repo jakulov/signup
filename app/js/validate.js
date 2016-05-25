@@ -5,7 +5,8 @@
  * @param messages
  * @constructor
  */
-var Validate = function(form, rules, messages) {
+var Validate = function(form, rules, messages)
+{
     this.messages = messages;
     this.form = $(form);
     var self = this;

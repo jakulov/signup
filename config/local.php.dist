@@ -1,0 +1,19 @@
+<?php
+/**
+ * Copy this file to config/local.php
+ * and set your own settings for any config parameters
+ *
+ * Created by PhpStorm.
+ * User: yakov
+ * Date: 25.05.16
+ * Time: 22:42
+ */
+
+return [
+    'pdo' => [
+        'dns' => 'mysql::dbname=signup;host=localhost', // connection string
+        'username' => 'root', // database user
+        'password' => '123', // user's password
+        'database' => 'signup', // database name
+    ],
+];

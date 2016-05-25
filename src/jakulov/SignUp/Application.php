@@ -39,7 +39,7 @@ class Application
             if(is_dir($configDir) && is_readable($configDir)) {
                 $dh = opendir($configDir);
                 while($f = readdir($dh)) {
-                    if($f !== '.' && $f !== '..' && $f !== 'local.php') {
+                    if($f !== '.' && $f !== '..' && strpos($f, 'local.php') === false) {
                         $file = $configDir .'/'. $f;
                         if(is_file($file)) {
                             $fileConfig = require $file;
@@ -102,6 +102,7 @@ class Application
      */
     public function handleError($errNo, $errMessage, $errFile, $errLine)
     {
+        var_dump($errFile, $errLine); die;
         throw new \ErrorException($errMessage, 0, $errNo, $errFile, $errLine);
     }
 

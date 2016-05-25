@@ -27,6 +27,10 @@ class SignUpController extends Controller
      */
     protected function signUpAction()
     {
+        if($this->getAuthUser()) {
+            return $this->redirect('/');
+        }
+
         $data = $this->getRequest()->getRequest();
         $validator = new SingUpValidator();
         $errors = [];
@@ -34,6 +38,7 @@ class SignUpController extends Controller
             if ($validator->validate($data)) {
                 $user = Container::getInstance()->getUserService()->signUpUser($data);
                 if($user) {
+                    Container::getInstance()->getUserService()->setAuthUser($user);
                     $this->addFlash('success', Language::get(USER_SUCCESS_SIGN_UP));
 
                     return $this->redirect('/');
@@ -60,9 +65,9 @@ class SignUpController extends Controller
     {
         $value = $this->getRequest()->getQuery('email');
         $hasUser = User::findOneBy(['email' => trim($value)]);
-        $data = ['ok' => 1];
+        $data = ['ok' => 0];
         if($hasUser) {
-            $data['ok'] = 0;
+            $data['ok'] = 1;
         }
 
         return new JsonResponse($data);

@@ -54,8 +54,11 @@
             <div class="form-group <?=(isset($errors['photo']) ? 'has-error' : '')?>">
                 <label class="control-label col-sm-3"><?= \jakulov\SignUp\Service\Language::get(PHOTO_LABEL)?></label>
                 <div class="col-sm-8">
-                    <input class="form-control" name="photo" type="text" value="<?php \jakulov\SignUp\Service\View::param($data, 'photo')?>">
                     <span class="help-block"><?php \jakulov\SignUp\Service\View::param($errors, 'photo')?></span>
+                    <input class="form-control" id="photo" name="photo" type="text" value="<?php \jakulov\SignUp\Service\View::param($data, 'photo')?>">
+                    <br>
+                    <span class="text-muted"><?=\jakulov\SignUp\Service\Language::get(ALLOW_FILE_SIZE)?> 10Mb</span>
+                    <span class="text-muted"><?=\jakulov\SignUp\Service\Language::get(ALLOW_FILE_FORMAT)?> JPG, GIF, PNG</span><br>
                 </div>
             </div>
 
@@ -86,6 +89,12 @@
                 var rules = [];
                 <?=($validator->getJsRules())?>
                 var Validator = new Validate('#form', rules, <?=\jakulov\SignUp\Service\Language::jsMessages()?>);
+
+                var ImageUploader = new ImageUpload('#photo', '/image/upload', {
+                    uploadLabel: '<?=\jakulov\SignUp\Service\Language::get(CHOOSE_IMAGE_LINK)?>',
+                    processMessage: '<?=\jakulov\SignUp\Service\Language::get(UPLOAD_PROCESS_MESSAGE)?>',
+                    maxUploadAlert: '<?=\jakulov\SignUp\Service\Language::get(MAX_UPLOAD_FILE_SIZE)?>'
+                })
             });
         </script>
 

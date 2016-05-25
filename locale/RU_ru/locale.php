@@ -39,5 +39,9 @@ return [
     INVALID_RESET_TOKEN => 'Неверная ссылка для восстановления пароля',
     USER_PASSWORD_RESET_SUCCESS => 'Пароль успешно изменен',
     USER_SUCCESS_LOGIN => 'Вход успешный',
-    USER_SUCCESS_SIGN_UP => 'Вы успешно зарегистрированы',
+    USER_SUCCESS_SIGN_UP => 'Вы успешно зарегистрированы, используйте указанный E-mail и пароль для входа',
+
+    MAX_UPLOAD_FILE_SIZE => 'Загружаемый файл не должен превышать ',
+    CHOOSE_IMAGE_LINK => 'Выбрать изображение',
+    UPLOAD_PROCESS_MESSAGE => 'Загрузка...',
 ];

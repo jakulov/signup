@@ -27,6 +27,10 @@ class SignInController extends Controller
      */
     protected function signInAction()
     {
+        if($this->getAuthUser()) {
+            return $this->redirect('/');
+        }
+
         $data = $this->getRequest()->getRequest();
         $validator = new Validator(['email' => [Validator::FILTER_NOT_EMPTY, Validator::FILTER_VALID_EMAIL], 'password' => Validator::FILTER_NOT_EMPTY]);
         $errors = [];

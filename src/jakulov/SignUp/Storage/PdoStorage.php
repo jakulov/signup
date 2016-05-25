@@ -22,6 +22,8 @@ class PdoStorage
     protected $username = 'root';
     /** @var string */
     protected $password = '';
+    /** @var string  */
+    protected $database = 'signup';
     /** @var array */
     protected $options = [
         \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
@@ -44,6 +46,9 @@ class PdoStorage
         if(isset($config['password']) && $config['password']) {
             $this->password = $config['password'];
         }
+        if(isset($config['database']) && $config['database']) {
+            $this->database = $config['database'];
+        }
     }
 
     /**
@@ -55,6 +60,7 @@ class PdoStorage
         if($this->pdo === null) {
             try {
                 $this->pdo = new \PDO($this->dns, $this->username, $this->password, $this->options);
+                $this->pdo->exec('USE '. $this->database);
             }
             catch(\PDOException $e) {
                 throw new SignUpException('Unable to connect to database', $e->getCode(), $e);

@@ -95,6 +95,9 @@ class UserService
      */
     public function setAuthUser(User $user, $remember = false, $bindIp = false)
     {
+        if(!isset($_SESSION)) {
+            session_start();
+        }
         $this->authUser = $user;
         $_SESSION[User::SESSION_PARAM] = $user->id;
         if($bindIp) {
@@ -171,7 +174,14 @@ class UserService
     {
         $user = new User();
 
-        // TODO: assign user data
+        $user->about = $data['about'];
+        $user->name = $data['name'];
+        $user->email = $data['email'];
+        $user->phone = $data['phone'];
+        $user->password = password_hash($data['password'], PASSWORD_BCRYPT);
+        $user->photo = str_replace('..', '/', $data['photo']);
+
+        $user->save();
 
         if($user->id) {
             return $user;

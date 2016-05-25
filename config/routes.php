@@ -35,6 +35,10 @@ return ['routes' => [
         'controller' => \jakulov\SignUp\Controller\SignUpController::class,
         'action' => 'validateEmail',
     ],
+    '/image/upload' => [
+        'action' => 'upload',
+        'controller' => \jakulov\SignUp\Controller\ImageController::class,
+    ],
     '/error' => [
         'controller' => \jakulov\SignUp\Controller\ErrorController::class,
         'action' => 'error',
